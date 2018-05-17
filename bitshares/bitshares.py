@@ -120,7 +120,7 @@ class BitShares(object):
 
         self.rpc = None
         self.debug = debug
-
+        self.prefix = kwargs.get("prefix", "BTS")
         self.offline = bool(kwargs.get("offline", False))
         self.nobroadcast = bool(kwargs.get("nobroadcast", False))
         self.unsigned = bool(kwargs.get("unsigned", False))
@@ -173,11 +173,7 @@ class BitShares(object):
         self.rpc = BitSharesNodeRPC(node, rpcuser, rpcpassword, **kwargs)
 
     def is_connected(self):
-        return bool(self.rpc)
-
-    @property
-    def prefix(self):
-        return self.rpc.chain_params["prefix"]
+        return bool(self.rpc)]
 
     def set_default_account(self, account):
         """ Set the default account to be used

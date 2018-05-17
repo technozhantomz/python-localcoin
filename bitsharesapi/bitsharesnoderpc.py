@@ -101,11 +101,7 @@ class BitSharesNodeRPC(GrapheneWebsocketRPC, GrapheneHTTPRPC):
             dictionary with keys chain_id, core_symbol and prefix
         """
         props = self.get_chain_properties()
-        chain_id = props["chain_id"]
-        for k, v in known_chains.items():
-            if v["chain_id"] == chain_id:
-                return v
-        raise Exception("Connecting to unknown network!")
+        return props
 
     def __getattr__(self, name):
         """ Map all methods to RPC calls and pass through the arguments.

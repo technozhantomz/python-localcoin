@@ -78,11 +78,7 @@ class Wallet():
 
     @property
     def prefix(self):
-        if self.blockchain.is_connected():
-            prefix = self.blockchain.prefix
-        else:
-            # If not connected, load prefix from config
-            prefix = config["prefix"]
+        prefix = config["prefix"]
         return prefix or "BTS"   # default prefix is BTS
 
     @property

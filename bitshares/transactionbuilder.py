@@ -330,13 +330,7 @@ class TransactionBuilder(dict):
             self.signing_accounts = list()
             self.appendSigner(proposer["id"], "active")
 
-        # We need to set the default prefix, otherwise pubkeys are
-        # presented wrongly!
-        if self.blockchain.rpc:
-            operations.default_prefix = (
-                self.blockchain.rpc.chain_params["prefix"])
-        elif "blockchain" in self:
-            operations.default_prefix = self["blockchain"]["prefix"]
+        operations.default_prefix = self.blockchain.prefix
 
         try:
             signedtx = Signed_Transaction(**self.json())
