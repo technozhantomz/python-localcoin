@@ -173,7 +173,7 @@ class BitShares(object):
         self.rpc = BitSharesNodeRPC(node, rpcuser, rpcpassword, **kwargs)
 
     def is_connected(self):
-        return bool(self.rpc)]
+        return bool(self.rpc)
 
     def set_default_account(self, account):
         """ Set the default account to be used
