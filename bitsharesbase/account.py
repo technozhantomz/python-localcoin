@@ -95,7 +95,7 @@ class Address(GPHAddress):
     """
     def __init__(self, *args, **kwargs):
         if "prefix" not in kwargs:
-            kwargs["prefix"] = "BTS"  # make prefix BTS
+            kwargs["prefix"] = "LLC"  # make prefix BTS
         super(Address, self).__init__(*args, **kwargs)
 
 
@@ -118,7 +118,7 @@ class PublicKey(GPHPublicKey):
     """
     def __init__(self, *args, **kwargs):
         if "prefix" not in kwargs:
-            kwargs["prefix"] = "BTS"  # make prefix BTS
+            kwargs["prefix"] = "LLC"  # make prefix BTS
         super(PublicKey, self).__init__(*args, **kwargs)
 
 
@@ -147,5 +147,5 @@ class PrivateKey(GPHPrivateKey):
     """
     def __init__(self, *args, **kwargs):
         if "prefix" not in kwargs:
-            kwargs["prefix"] = "BTS"  # make prefix BTS
+            kwargs["prefix"] = "LLC"  # make prefix BTS
         super(PrivateKey, self).__init__(*args, **kwargs)

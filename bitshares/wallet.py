@@ -79,7 +79,7 @@ class Wallet():
     @property
     def prefix(self):
         prefix = config["prefix"]
-        return prefix or "BTS"   # default prefix is BTS
+        return prefix or "LLC"   # default prefix is LLC
 
     @property
     def rpc(self):
