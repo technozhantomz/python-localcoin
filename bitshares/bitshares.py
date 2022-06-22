@@ -120,7 +120,7 @@ class BitShares(object):
 
         self.rpc = None
         self.debug = debug
-        self.prefix = kwargs.get("prefix", "BTS")
+        self.prefix = kwargs.get("prefix", "KES")
         self.offline = bool(kwargs.get("offline", False))
         self.nobroadcast = bool(kwargs.get("nobroadcast", False))
         self.unsigned = bool(kwargs.get("unsigned", False))
@@ -1422,7 +1422,7 @@ class BitShares(object):
         """
         from bitsharesbase.transactions import timeformat
         assert isinstance(daily_pay, Amount)
-        assert daily_pay["symbol"] == "BTS"
+        assert daily_pay["symbol"] == "KES"
         if not begin:
             begin = datetime.utcnow() + timedelta(seconds=30)
         if not account:
